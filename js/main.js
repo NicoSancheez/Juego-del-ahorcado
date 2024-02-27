@@ -1,12 +1,12 @@
-    // Lista de palabras para el juego
+    // Lista de palabras 
     const palabras = ["computadora", "loro", "perro", "", "microfono", "dinosaurio", "desodorante"];
 
-    // Función para seleccionar una palabra aleatoria
+    // Seleccionar palabra
     function seleccionarPalabra() {
         return palabras[Math.floor(Math.random() * palabras.length)];
     }
 
-    // Función para reiniciar el juego
+    // Reiniciar el juego
     function reiniciarJuego() {
         palabraSeleccionada = seleccionarPalabra();
         palabraOculta = "";
@@ -34,14 +34,14 @@
     let palabraOculta = "";
     let fallos = 0;
 
-    // Mostrar la palabra oculta
+    // Palabra oculta
     const contenedorPalabra = document.getElementById("Containerdepalabras");
     for (let i = 0; i < palabraSeleccionada.length; i++) {
         palabraOculta += "_ ";
     }
     contenedorPalabra.textContent = palabraOculta;
 
-    // Inicializar las letras disponibles
+    // Inicializar letras 
     const alfabeto = "abcdefghijklmnñopqrstuvwxyz";
     const contenedorLetras = document.getElementById("Containerdeletras");
     for (let letra of alfabeto) {
@@ -54,7 +54,7 @@
         contenedorLetras.appendChild(boton);
     }
 
-    // Función para comprobar si la letra está en la palabra
+    // Comprobar si la letra está en la palabra
     function comprobarLetra(letra) {
         let nuevaPalabraOculta = "";
         let letraEncontrada = false;
@@ -82,7 +82,7 @@
         }
     }
 
-    // Dibujar el ahorcado
+    // Ahorcado
     function dibujarAhorcado() {
         const canvas = document.getElementById("ahorcadoCanvas");
         const ctx = canvas.getContext("2d");
